@@ -5,9 +5,17 @@ require 'grape'
 module BoletoApi
 
   def self.get_boleto(bank, values)
-   clazz = Object.const_get("Brcobranca::Boleto::#{bank.camelize}")
-   date_fields = %w[data_documento data_vencimento data_processamento]
-   date_fields.each do |date_field|
+    # TODO - Solução temporária
+    # depois de configurado a primeira vez não é mais possível alterar o modelo.
+    # apenas reiniciando o app novamente.. ver: https://github.com/kivanio/brcobranca/issues/238
+    modelo = values.delete("modelo")
+    Brcobranca.setup do |config|
+      config.gerador = modelo.to_sym 
+    end
+
+    clazz = Object.const_get("Brcobranca::Boleto::#{bank.camelize}")
+    date_fields = %w[data_documento data_vencimento data_processamento]
+    date_fields.each do |date_field|
       values[date_field] = Date.parse(values[date_field]) if values[date_field]
     end
     clazz.new(values)

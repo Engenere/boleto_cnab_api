@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/Engenere/brcobranca.git
-  revision: 67f8028f273fd11e2878cbb2d214b9948cc8b083
-  branch: novo-template
+  revision: 502c30035f38dadbcaf4de078a985907b6ce8627
+  branch: fix-remessa-bb-400-seu-numero
   specs:
-    brcobranca (10.0.0)
+    brcobranca (10.1.0)
       activesupport (>= 5.2.6)
       parseline (>= 1.0.3)
       rghost (>= 0.9)
@@ -12,28 +12,28 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (7.0.3.1)
+    activesupport (7.0.4.3)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
     builder (3.2.4)
-    concurrent-ruby (1.1.10)
-    dry-container (0.10.0)
+    concurrent-ruby (1.2.2)
+    dry-core (1.0.0)
       concurrent-ruby (~> 1.0)
-    dry-core (0.8.0)
+      zeitwerk (~> 2.6)
+    dry-inflector (1.0.0)
+    dry-logic (1.5.0)
       concurrent-ruby (~> 1.0)
-    dry-inflector (0.3.0)
-    dry-logic (1.2.0)
+      dry-core (~> 1.0, < 2)
+      zeitwerk (~> 2.6)
+    dry-types (1.7.1)
       concurrent-ruby (~> 1.0)
-      dry-core (~> 0.5, >= 0.5)
-    dry-types (1.5.1)
-      concurrent-ruby (~> 1.0)
-      dry-container (~> 0.3)
-      dry-core (~> 0.5, >= 0.5)
-      dry-inflector (~> 0.1, >= 0.1.2)
-      dry-logic (~> 1.0, >= 1.0.2)
-    grape (1.6.2)
+      dry-core (~> 1.0)
+      dry-inflector (~> 1.0)
+      dry-logic (~> 1.4)
+      zeitwerk (~> 2.6)
+    grape (1.7.0)
       activesupport
       builder
       dry-types (>= 1.1)
@@ -42,26 +42,27 @@ GEM
       rack-accept
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
-    minitest (5.16.2)
-    mustermann (2.0.0)
+    minitest (5.18.0)
+    mustermann (3.0.0)
       ruby2_keywords (~> 0.0.1)
     mustermann-grape (1.0.2)
       mustermann (>= 1.0.0)
     nio4r (2.5.8)
     parseline (1.0.3)
-    puma (5.6.4)
+    puma (6.1.1)
       nio4r (~> 2.0)
-    rack (2.2.4)
+    rack (3.0.7)
     rack-accept (0.4.5)
       rack (>= 0.4)
-    rghost (0.9.7)
+    rghost (0.9.8)
     rghost_barcode (0.9)
     ruby2_keywords (0.0.5)
-    tzinfo (2.0.4)
+    tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    zeitwerk (2.6.7)
 
 PLATFORMS
-  ruby
+  x86_64-linux
 
 DEPENDENCIES
   brcobranca!
@@ -69,4 +70,4 @@ DEPENDENCIES
   puma
 
 BUNDLED WITH
-   2.1.4
+   2.4.8

@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/Engenere/brcobranca.git
-  revision: 502c30035f38dadbcaf4de078a985907b6ce8627
-  branch: fix-remessa-bb-400-seu-numero
+  revision: e65bc3276d56421ccdf0b76d5f3386f9cf61350e
+  branch: engenere-v2
   specs:
     brcobranca (10.1.0)
       activesupport (>= 5.2.6)
@@ -12,7 +12,7 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (7.0.4.3)
+    activesupport (7.0.5)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
@@ -33,25 +33,25 @@ GEM
       dry-inflector (~> 1.0)
       dry-logic (~> 1.4)
       zeitwerk (~> 2.6)
-    grape (1.7.0)
+    grape (1.7.1)
       activesupport
       builder
       dry-types (>= 1.1)
       mustermann-grape (~> 1.0.0)
-      rack (>= 1.3.0)
+      rack (>= 1.3.0, < 3)
       rack-accept
-    i18n (1.12.0)
+    i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     minitest (5.18.0)
     mustermann (3.0.0)
       ruby2_keywords (~> 0.0.1)
     mustermann-grape (1.0.2)
       mustermann (>= 1.0.0)
-    nio4r (2.5.8)
+    nio4r (2.5.9)
     parseline (1.0.3)
-    puma (6.1.1)
+    puma (6.3.0)
       nio4r (~> 2.0)
-    rack (3.0.7)
+    rack (2.2.7)
     rack-accept (0.4.5)
       rack (>= 0.4)
     rghost (0.9.8)
@@ -59,7 +59,7 @@ GEM
     ruby2_keywords (0.0.5)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
-    zeitwerk (2.6.7)
+    zeitwerk (2.6.8)
 
 PLATFORMS
   x86_64-linux
@@ -70,4 +70,4 @@ DEPENDENCIES
   puma
 
 BUNDLED WITH
-   2.4.8
+   2.3.5

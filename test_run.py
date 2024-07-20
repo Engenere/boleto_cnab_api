@@ -1,16 +1,16 @@
 import json
 import tempfile
 from pathlib import Path
-import os
 import subprocess
 import requests
 import time
 
 
 def test_run():
-    cmd = ["docker", "build", "-t", "akretion/boleto_cnab_api", "."]
+    cmd = ["docker", "build", "-t", "engenere/boleto_cnab_api", "."]
     result = subprocess.run(
-        cmd, check=False, capture_output=True, text=True, cwd=Path(__file__).parent
+        cmd, check=False, capture_output=True, text=True,
+        cwd=Path(__file__).parent
     )
     assert result.returncode == 0, result.stderr + "\n" + result.stdout
 
@@ -21,13 +21,14 @@ def test_run():
         "-p",
         "9292:9292",
         "--name=boleto_cnab_api",
-        "akretion/boleto_cnab_api",
+        "engenere/boleto_cnab_api",
     ]
     result = subprocess.run(cmd, check=False, capture_output=True, text=True)
     assert result.returncode == 0, result.stderr + "\n" + result.stdout
     time.sleep(5)
     remessa_values = [
         {
+            "modelo": "rghost2",
             "valor": 5.0,
             "cedente": "Kivanio Barbosa",
             "documento_cedente": "12345678912",
@@ -40,6 +41,7 @@ def test_run():
             "bank": "itau",
         },
         {
+            "modelo": "rghost2",
             "valor": 10.00,
             "cedente": "PREFEITURA MUNICIPAL DE VILHENA",
             "documento_cedente": "04092706000181",

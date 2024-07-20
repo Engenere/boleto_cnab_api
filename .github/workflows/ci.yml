@@ -42,7 +42,7 @@ jobs:
             ${{ github.repository == 'engenere/boleto_cnab_api' && github.ref ==
             'refs/heads/master' }}
           tags: |
-            ghcr.io/${{ github.repository }}:latest
+            ghcr.io/engenere/boleto_cnab_api:latest
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=inline
 
